@@ -46,12 +46,10 @@ df = pd.DataFrame(columns=['類型', '書名', '作者', '優惠價'])
 # 取得價格
         book_price = item.find_all('b')[-1].text
 
-# 存入dataframe
         df.loc[len(df)+1] = None
         df.iloc[-1]['類型'] = title
         df.iloc[-1]['書名'] = book_name
         df.iloc[-1]['作者'] = book_author
         df.iloc[-1]['優惠價'] = book_price
 
-# 轉出csv檔
 df.to_csv('booksScraper.csv')
